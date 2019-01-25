@@ -14,15 +14,10 @@ client.on('message', msg => {
 
 client.login(process.env.BOT_TOKEN);  //لا تحط التوكن حقك هنا
 
-// playing
-client.on('ready', () => {                           
-client.user.setGame(`DARK SIDE SERVER'); 
- });
-
 const Discord = require("discord.js");
   const client = new Discord.Client();
-      kboosh.on('ready', () => {
-        kboosh.user.setGame(`DARKSIDE SERVER`,'https://www.twitch.tv/TEST-Broadcast');
+      client.on('ready', () => {
+        client.user.setGame(`DARKSIDE SERVER`,'https://www.twitch.tv/TEST-Broadcast');
           console.log('Im Ready!');
   
         });
@@ -40,6 +35,7 @@ const Discord = require("discord.js");
             
                                                   });
    client.on("message", message => {
+     var prefix ="-"
 
              var args = message.content.substring(prefix.length).split(" ");
                 if (message.content.startsWith(prefix + "bc")) {
