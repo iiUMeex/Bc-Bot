@@ -15,14 +15,6 @@ client.on('message', msg => {
 
 client.login(process.env.BOT_TOKEN);  //لا تحط التوكن حقك هنا
 
-const Discord = require("discord.js");
-  const client = new Discord.Client();
-      client.on('ready', () => {
-        client.user.setGame(`BroadCast`,'https://www.twitch.tv/TEST-Broadcast');
-          console.log('Im Ready!');
-  
-        });
-
 //bc
 
 client.on("message", message => {
