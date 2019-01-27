@@ -1,6 +1,7 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 var prefix = "-"
+var adminprefix = '!'
 
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
@@ -21,16 +22,11 @@ const Discord = require("discord.js");
           console.log('Im Ready!');
   
         });
-const Discord = require('discord.js');
-const client = new Discord.Client();
-var prefix = "-"
-var adminprefix = '!'
-
 
 //bc
 
 client.on("message", message => {
-    if (message.content.startsWith("$obc")) {
+    if (message.content.startsWith("-obc")) {
                  if (!message.member.hasPermission("ADMINISTRATOR"))  return;
   let args = message.content.split(" ").slice(1);
   var argresult = args.join(' ');
@@ -89,7 +85,7 @@ m.sendMessage(args)
 });
 
   client.on('message', msg => {
-    if(msg.content === '$help')
+    if(msg.content === '-help')
     msg.reply('Check Your DM :white_check_mark:')
   });
   
@@ -113,7 +109,7 @@ m.sendMessage(args)
    }
    });
 
-const developers = ["472413769700474901","id"]
+const developers = ["480743594475651102","id"]
 client.on('message', message => {
     var argresult = message.content.split(` `).slice(1).join(' ');
       if (!developers.includes(message.author.id)) return;
