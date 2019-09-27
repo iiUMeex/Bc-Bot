@@ -27,7 +27,7 @@ client.on("message", message => {
 
 //bc online
 
-
+var prefix = '!';
 var adminprefix = '!';
 
   client.on("message", message => {
