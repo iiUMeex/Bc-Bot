@@ -42,13 +42,6 @@ var prefix = '#';
   };     
   });
 
-client.on('message', message => {
-    var  user = message.mentions.users.first() || message.author;
-if (message.content.startsWith("#avatar")) {
-message.channel.send(`This avatar For ${user} link : ${user.avatarURL}`);
-}
-});
-
 client.on('ready',  () => {
     console.log('تم تشغيل :Broadcast  ');
     console.log(`Logged in as * [ " ${client.user.username} " ] servers! [ " ${client.guilds.size} " ]`);
@@ -57,21 +50,21 @@ client.on('ready',  () => {
   });
 
   client.on('message', msg => {
-    if(msg.content === '-help')
+    if(msg.content === '#help')
     msg.reply('Check Your DM :white_check_mark:')
   });
   
   
   client.on("message", message => {
-    if (message.content === "-help") {
+    if (message.content === "#help") {
      const embed = new Discord.RichEmbed() 
          .setColor("#00FF00")
          .setThumbnail(message.author.avatarURL)
          .setDescription(`**Help|هيلب
 
-       !obc | لأرسال برود كاست للكل
+       #obc | لأرسال برود كاست للكل
 
-       !bc  |  لأرسال برود كاست للأونلاين
+       #bc  |  لأرسال برود كاست للأونلاين
 
        ** `)
    message.author.sendEmbed(embed)
