@@ -1,7 +1,6 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 var prefix = '!'
-var adminprefix = '!'
 
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
@@ -28,7 +27,6 @@ client.on("message", message => {
 //bc online
 
 var prefix = '!';
-var adminprefix = '!';
 
   client.on("message", message => {
   
@@ -46,7 +44,7 @@ var adminprefix = '!';
 
 client.on('message', message => {
     var  user = message.mentions.users.first() || message.author;
-if (message.content.startsWith("-avatar")) {
+if (message.content.startsWith("!avatar")) {
 message.channel.send(`This avatar For ${user} link : ${user.avatarURL}`);
 }
 });
@@ -58,18 +56,6 @@ client.on('ready',  () => {
     console.log(`Logged in as * [ " ${client.user.username} " ] channels! [ " ${client.channels.size} " ]`);
   });
 
-  client.on('message', message => {
-    if(!message.channel.guild) return;
-let args = message.content.split(' ').slice(1).join(' ');
-if (message.content.startsWith('!adminbc')){
-if(!message.author.id === '476185102922285066') return;
-message.channel.sendMessage('جار ارسال الرسالة |:white_check_mark:')
-client.users.forEach(m =>{
-m.sendMessage(args)
-})
-}
-});
-
   client.on('message', msg => {
     if(msg.content === '!help')
     msg.reply('Check Your DM :white_check_mark:')
@@ -77,7 +63,7 @@ m.sendMessage(args)
   
   
   client.on("message", message => {
-    if (message.content === "-help") {
+    if (message.content === "!help") {
      const embed = new Discord.RichEmbed() 
          .setColor("#00FF00")
          .setThumbnail(message.author.avatarURL)
@@ -86,8 +72,6 @@ m.sendMessage(args)
        !obc | لأرسال برود كاست للكل
 
        !bc  |  لأرسال برود كاست للأونلاين
-
-       !adminbc| برودكاست عادي
 
        ** `)
    message.author.sendEmbed(embed)
