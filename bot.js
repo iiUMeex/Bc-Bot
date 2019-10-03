@@ -1,6 +1,7 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 var prefix = '#'
+var prefix2 = 'tbc'
 var adminprefix = '!'
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
@@ -27,10 +28,12 @@ client.on("message", message => {
 //bc online
 
 var prefix = '#';
+ var prefix2 = 'tbc';
 
   client.on("message", message => {
   
               if (message.content.startsWith(prefix + "bc")) {
+                if (message.content.startsWith(prefix2 + "bc")) {
                            if (!message.member.hasPermission("ADMINISTRATOR"))  return;
     let args = message.content.split(" ").slice(1);
     var argresult = args.join(' '); 
