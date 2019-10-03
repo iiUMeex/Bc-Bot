@@ -118,6 +118,14 @@ client.on("message", message => {
 
 client.login(process.env.BOT_TOKEN);
 
+const Discord2 = require('discord.js');
+const client2 = new Discord.Client();
+var prefix2 = 't'
+var adminprefix2 = 't!'
+client2.on('ready', () => {
+  console.log(`Logged in as ${client.user.tag}!`);
+});
+
 client.on("message", message => {
     if (message.content.startsWith("tobc")) {
                  if (!message.member.hasPermission("ADMINISTRATOR"))  return;
