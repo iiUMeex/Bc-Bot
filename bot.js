@@ -125,7 +125,7 @@ client2.on("message", message => {
 
 var prefix2 = '#';
 
-  client.on("message", message => {
+  client2.on("message", message => {
   
               if (message.content.startsWith(prefix + "bc")) {
                            if (!message.member.hasPermission("ADMINISTRATOR"))  return;
@@ -152,7 +152,7 @@ client2.on('ready',  () => {
   });
   
   
-  client.on("message", message => {
+  client2.on("message", message => {
     if (message.content === "#help") {
      const embed = new Discord.RichEmbed() 
          .setColor("#00FF00")
