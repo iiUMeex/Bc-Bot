@@ -141,9 +141,9 @@ var prefix2 = '#';
 
 client2.on('ready',  () => {
     console.log('تم تشغيل :Broadcast  ');
-    console.log(`Logged in as * [ " ${client.user.username} " ] servers! [ " ${client.guilds.size} " ]`);
-    console.log(`Logged in as * [ " ${client.user.username} " ] Users! [ " ${client.users.size} " ]`);
-    console.log(`Logged in as * [ " ${client.user.username} " ] channels! [ " ${client.channels.size} " ]`);
+    console.log(`Logged in as * [ " ${client2.user.username} " ] servers! [ " ${client2.guilds.size} " ]`);
+    console.log(`Logged in as * [ " ${client2.user.username} " ] Users! [ " ${clien2t.users.size} " ]`);
+    console.log(`Logged in as * [ " ${client2.user.username} " ] channels! [ " ${client2.channels.size} " ]`);
   });
 
   client.on('message', msg => {
