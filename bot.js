@@ -1,7 +1,15 @@
+const Discord = require('discord.js');
+const client = new Discord.Client();
+var prefix = '-'
+client.on('ready', () => {
+  console.log(`Logged in as ${client.user.tag}!`);
+});
+
+client.login('token');
 client.on('message', message => {
 if(!message.content.startsWith(prefix)) return;
 let command = message.content.split(" ")[0];
-command = command.slice(prefix.length);if (command == "-bc") {if(!message.member.roles.find('name','bc')) {
+command = command.slice(prefix.length);if (command == "bc") {if(!message.member.roles.find('name','bc')) {
 if(!message.member.hasPermission('ADMINISTRATOR')) return message.channel.send(`**⛔ you must have \`ADMINISTRATOR\` premission**, or role called "bc"`)}
 let args = message.content.split(" ").slice(1).join(" ");
 if(!args) return message.channel.send(`**:rolling_eyes: please type the broadcast message**`)
@@ -45,3 +53,5 @@ message.channel.bulkDelete(2);msgg.delete();message.channel.send('**☑ Broadcas
 })}).catch(myst =>{msgg.edit('Timed out.');})})
 }if(collected.first().content === '5'){} // لو تبي تضيف شي خامس :]
 }).catch(mys =>{msg.edit('Timed out to chose.')})})}});
+
+client.login(process.env.BOT_TOKEN);
